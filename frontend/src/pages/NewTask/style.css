@@ -25,3 +25,7 @@ html{
   justify-items: center;
   align-items: center;
 }
+.jedi{
+  width: 512px;
+  height: 512px;
+}

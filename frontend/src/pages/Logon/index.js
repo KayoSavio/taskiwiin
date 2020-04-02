@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from '../../kiwii.svg';
 import { Link, useHistory} from "react-router-dom";
+import './style.css';
 
 export default function Home (){
 

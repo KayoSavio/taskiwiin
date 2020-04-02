@@ -34,6 +34,7 @@
   height: 30px;
   background-color: #8cc63f;
   border-color: #603813;
+  cursor: pointer;
 }
 .App-link{
   margin-top: 5px;
@@ -63,23 +64,4 @@
 }
 .App-input2{
   width: 245px;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    margin-bottom: 20px;
-  }
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

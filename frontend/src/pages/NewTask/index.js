@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import './style.css';
-
+import jedi from '../../assets/jedi.png';
 export default function NewTask(){
   const tarefas = [''];
   const history = useHistory();
@@ -19,6 +19,7 @@ export default function NewTask(){
   return(
     <div className="box">
       <div className="block2">
+      <img src={jedi} className="jedi" />
         <button onClick={logout} className="button">Voltar</button>
       </div>
       <div className="block">
