@@ -1,12 +1,22 @@
 const express = require('express');
 const routes = express.Router();
 
-routes.get('/task',(req,res) => {
-  res.send('Nova Tarefa');
+const newUser = require('./controllers/newUser');
+const newTask = require('./controllers/newTask');
+
+routes.get('/task',async (req,res) => {
+  //const tasks = await 
 });
 
-routes.use('/', (req,res) => {
+routes.get('/', (req,res) => {
   res.send('Home');
 });
+routes.post('/newuser', newUser.create);
+
+routes.post('/tasks', newTask.create);
+routes.get('/tasks', newTask.list);
+routes.get('/tasks/:id', newTask.listItem);
+routes.delete('/tasks/:id', newTask.delete);
+routes.put('/tasks/:id', newTask.update);
 
 module.exports = routes;
