@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const routes = require('./src/routes');
 const port = 3333;
+const cors = require('cors')
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 app.use(express.urlencoded({extended: true}));

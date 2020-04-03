@@ -11,12 +11,15 @@ routes.get('/task',async (req,res) => {
 routes.get('/', (req,res) => {
   res.send('Home');
 });
-routes.post('/newuser', newUser.create);
+routes.post('/register', newUser.create);
+routes.get('/register/:id', newUser.login);
+routes.get('/register', newUser.index);
 
 routes.post('/tasks', newTask.create);
 routes.get('/tasks', newTask.list);
 routes.get('/tasks/:id', newTask.listItem);
 routes.delete('/tasks/:id', newTask.delete);
 routes.put('/tasks/:id', newTask.update);
+
 
 module.exports = routes;
