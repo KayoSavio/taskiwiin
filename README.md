@@ -5,7 +5,13 @@ Espero que ajude vocês tambem!
 
 Falta fazer e coisas que quero adicionar ainda:
 
-[ ] Fazer a comunicação do backend com o frontend.
+[x] Fazer a comunicação do backend com o frontend.
+
+[ ] Fazer UI design no Figma
+
+[ ] Selecionar as task pelo id do usuário.
+
+[ ] Mudar campos de logon de id para usuário e senha
 
 [ ] Fazer a parte mobile.
 
