@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Logon from './pages/Logon';
-import NewTask from './pages/NewTask';
+import Task from './pages/Task';
 import Register from './pages/Register';
 
 export default function Routes(){
@@ -10,7 +10,7 @@ export default function Routes(){
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Logon} exact/>
-        <Route path="/task" component={NewTask}/>
+        <Route path="/tasks" component={Task}/>
         <Route path="/register" component={Register}/>
       </Switch>
     </BrowserRouter>

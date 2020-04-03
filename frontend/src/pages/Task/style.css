@@ -1,0 +1,9 @@
+
+.jedi{
+  width: 512px;
+  height: 512px;
+}
+.block{
+  display: flex;
+  background-color: khaki;
+}
