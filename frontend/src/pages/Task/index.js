@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './style.css';
 import jedi from '../../assets/jedi.png';
 import { MdAddCircle } from 'react-icons/md';
@@ -51,50 +51,53 @@ export default function NewTask(){
 
   return(
     <div className="box">
-      <strong className="title">{userName} tasks</strong>
-      <div className="block2">
+      
+      <div className="perfil">
       <img src={jedi} className="jedi" />
-        <button onClick={logout} className="button">Voltar</button>
+      <h1 className="title">{userName}</h1>
+        <button onClick={logout} className="button">Logout</button>
       </div>
 
       <div className="block">
         <h1 className="h">Tarefas</h1>
-        
-        <ul>
+        <div className="tt">
+        <ul className="list">
           {tasks.map(tasks=>(
             <li key={tasks._id}>
-            <strong>{tasks.name}</strong>
-          <p>{tasks.description}</p>
-            <button onClick={() => {
+            <strong className="taskName">{tasks.name}</strong>
+            <p className="taskDescription">{tasks.description}</p>
+            <Link className="" onClick={() => {
               deleteTasks(tasks._id)
-            }} className="trash"><FiTrash2 size={16} color="#8cc63f"/></button>
+            }} className="trash"><FiTrash2 display="inline-block" size={24} color="#07C86B"/>
+            </Link>
           </li>
           ))}
         </ul>  
+        </div>
       </div>
+      <div className="tarefa">
+        <form onSubmit={addTarefas} className="form">
+          <strong className="task">Nova Tarefa</strong>
+          <input 
+            className="name"
+            type="text" 
+            placeholder="Nova Tarefa"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          
+          <input 
+            className="description"
+            type="text" 
+            placeholder="Nova Tarefa"
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+          />
 
-      <form onSubmit={addTarefas} className="form">
-        
-        <input 
-          className="name"
-          type="text" 
-          placeholder="Nova Tarefa"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        
-        <input 
-          className="description"
-          type="text" 
-          placeholder="Nova Tarefa"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-        />
+          <button type="submit" className="submit">Nova tarefa</button>
 
-        <button type="submit" className="button">Nova tarefa</button>
-        <MdAddCircle size={18} color="#8cc63f"/>
-
-      </form>      
+        </form> 
+      </div>     
     </div>
   );
 }

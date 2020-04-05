@@ -1,9 +1,29 @@
 
 .App-logo {
+  position: absolute;
   height: 40vmin;
   pointer-events: none;
 }
+.taskiwiin{
+  position: absolute;
+  width: 189px;
+  height: 59px;
+  top: 0;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 59px;
+  /* identical to box height */
 
+
+  /* #B1D971 */
+
+  color: #07C86B;
+  /* Text Sombra */
+
+  text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 15s linear;
@@ -17,4 +37,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+.boxLogon{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* #9EEF6C */
+  background: #9EEF6C;
+  mix-blend-mode: normal;
+}
+.divLogon{
+  position: absolute;
+  left: 400px;
+  top:100px;
+  width: 639px;
+  height: 639px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  /* #E6FFE2 */
+
+  background: #E6FFE2;
+  /* Sombra Style */
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+.input{
+  position: absolute;
+width: 283px;
+height: 47px;
+background: #FBFBFB;
+/* inputshadown */
+
+box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.buttonLogon{
+  position: absolute;
+width: 283px;
+height: 64px;
+
+/* #B1D971 */
+
+background: #07C86B;
+/* Sombra Style */
+
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 29px;
+}
+.form{
+  position: absolute;
+  bottom: 400px;
+}
+.linkLogon{
+  position: absolute;
+  left: 0;
 }

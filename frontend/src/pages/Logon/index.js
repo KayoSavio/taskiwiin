@@ -31,10 +31,10 @@ export default function Home (){
   }
 
   return(
-    <div className="box">
+    <div className="boxLogon">
       
-      <div className="caixa">
-          <p className="p">TasKiwiin</p>
+      <div className="divLogon">
+          <p className="taskiwiin">TasKiwiin</p>
           
           <img src={logo} className="App-logo" alt="logo" />
           
@@ -43,20 +43,20 @@ export default function Home (){
             <h1>Faça seu Logon</h1>
 
             <input 
-              className="input" 
+              className="inputLogon" 
               placeholder="Coloque seu ID"
               value={id}
               onChange={e => setId(e.target.value)}
             /> 
 
-            <button className="button"
+            <button className="buttonLogon"
              type="submit">
                Entrar
             </button>
 
           </form>  
 
-          <Link className="App-link" to="/register">
+          <Link className="linkLogon" to="/register">
             Não tenho cadastro
           </Link>
       </div>

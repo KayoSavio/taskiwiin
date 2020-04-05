@@ -59,6 +59,7 @@ export default function Register(){
           />
 
         <input 
+          type="password"
           placeholder="Senha"
           className="password"
           value={password}
@@ -66,8 +67,9 @@ export default function Register(){
           />
 
         <input 
+          type="password"
           placeholder="Confirme a senha" 
-          className="password"
+          className="password2"
           value={password2}
           onChange={e => setPassword2(e.target.value)}
          />
