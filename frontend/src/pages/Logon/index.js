@@ -31,19 +31,19 @@ export default function Home (){
   }
 
   return(
-    <div className="boxLogon">
+    <div className="login">
       
-      <div className="divLogon">
-          <p className="taskiwiin">TasKiwiin</p>
+      <div className="conteiner">
+          <h1 className="text">TasKiwiin</h1>
           
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="imgLogo" alt="logo" />
           
           <form onSubmit={Login} className="form">
             
-            <h1>Faça seu Logon</h1>
+            <h2 className="textInput">Faça seu Logon</h2>
 
             <input 
-              className="inputLogon" 
+              className="inputID" 
               placeholder="Coloque seu ID"
               value={id}
               onChange={e => setId(e.target.value)}

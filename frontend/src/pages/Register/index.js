@@ -42,18 +42,18 @@ export default function Register(){
   }
 
   return(
-    <div className="box">
+    <div className="boxRegister">
       <form onSubmit={newUser} className="form">
         <input 
           placeholder="Nome"
-          className="name"
+          className="inputName"
           value={name}
           onChange={e => setName(e.target.value)}
          />
 
         <input 
           placeholder="E-mail"
-          className="email"
+          className="inputEmail"
           value={email}
           onChange={e => setEmail(e.target.value)}
           />
@@ -61,7 +61,7 @@ export default function Register(){
         <input 
           type="password"
           placeholder="Senha"
-          className="password"
+          className="inputPassword"
           value={password}
           onChange={e => setPassword(e.target.value)}
           />

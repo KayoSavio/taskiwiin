@@ -1,0 +1,6 @@
+.boxRegister{
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+  background-color: #07C86B;
+}

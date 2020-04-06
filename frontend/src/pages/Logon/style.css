@@ -1,36 +1,46 @@
-
-.App-logo {
-  position: absolute;
-  height: 40vmin;
-  pointer-events: none;
+.login{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: auto;
+  height: 1000px;
+  align-items: center;
+  background: #9EEF6C;
+  mix-blend-mode: normal;
 }
-.taskiwiin{
-  position: absolute;
-  width: 189px;
-  height: 59px;
-  top: 0;
+.conteiner{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 639px;
+  height: 639px;
+  background: #E6FFE2;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+.text{
+  margin-top: 15px;
   font-family: Segoe UI;
   font-style: normal;
   font-weight: bold;
-  font-size: 44px;
+  font-size: 50px;
   line-height: 59px;
-  /* identical to box height */
-
-
-  /* #B1D971 */
-
   color: #07C86B;
-  /* Text Sombra */
-
   text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
 }
+.imgLogo {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40vmin;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 15s linear;
-    margin-bottom: 20px;
+  .imgLogo {
+    animation: imgLogo infinite 15s linear;
   }
 }
-@keyframes App-logo-spin {
+@keyframes imgLogo {
   from {
     transform: rotate(0deg);
   }
@@ -38,63 +48,39 @@
     transform: rotate(360deg);
   }
 }
-.boxLogon{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* #9EEF6C */
-  background: #9EEF6C;
-  mix-blend-mode: normal;
-}
-.divLogon{
-  position: absolute;
-  left: 400px;
-  top:100px;
-  width: 639px;
-  height: 639px;
+.form{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  /* #E6FFE2 */
-
-  background: #E6FFE2;
-  /* Sombra Style */
-
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
-.input{
-  position: absolute;
-width: 283px;
-height: 47px;
-background: #FBFBFB;
-/* inputshadown */
-
-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+.textInput{
+  font-size: 28px;
+  color: #603813;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.inputID{
+  top: 5px;
+  width: 274px;
+  height: 35px;
+  background: #FBFBFB;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
 }
 .buttonLogon{
-  position: absolute;
-width: 283px;
-height: 64px;
-
-/* #B1D971 */
-
-background: #07C86B;
-/* Sombra Style */
-
-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 29px;
+  width: 283px;
+  height: 57px;
+  background: #07C86B;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 5px;
 }
-.form{
-  position: absolute;
-  bottom: 400px;
-}
+
 .linkLogon{
-  position: absolute;
-  left: 0;
+  color: #07C86B;
+  margin-bottom: 10px;
 }
