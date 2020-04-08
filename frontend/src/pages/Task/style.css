@@ -1,53 +1,43 @@
+.box{
+  display: flex;
+  width: 1750px;
+  height: 800px;
+  flex-direction: row;
+}
 
+/* PERFIL */
+
+.perfil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 550px;
+  margin-right: 25px;
+  background: #E6FFE2;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
 .jedi{
-  position: absolute;
+  margin-top: 30px;
   width: 213px;
   height: 213px;
-  left: 28px;
-  top: 30px;
-/* Sombra Style */
-
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
-.h{
-  position: absolute;
-  width: 88px;
-  height: 29px;
-  left: 30px;
-  top: 0px;
+.titlePerfil{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 30px;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 35px;
   line-height: 29px;
-  /* identical to box height */
-  /* #B1D971 */
   color: #07C86B;
-  /* Text Sombra */
   text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
 }
-.list{
-  position: absolute;
-  left:30px;
-  top:55px;
-  bot:10px;
-}
-
-.taskName{
-  display: inline-block;
-  color:#07C86B;
-  font-size: 20px;
-
-}
-.taskDescription{
-  display: inline-block;
-  margin-left: px;
-  font-size: 16px;
-  margin:2px;
-  color: cadetblue;
-}
 .button{
-  position: absolute;
   width: 213px;
   height: 48px;
   left: 28px;
@@ -56,141 +46,170 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 29px;
-  /* identical to box height */
-
-
-  color: #FFFFFF;
-  /* #B1D971 */
-
   background: #07C86B;
+  color: #fff;
   border-radius: 10px;
+  cursor: pointer;
 }
-.title{
-  position: absolute;
-  width: 91px;
+.taskSearch{
+  font-size: 20px;
+  color: rgb(122, 122, 122);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* PERFIL */
+
+
+/* TAREFAS */
+
+.block{
+  display: flex;
+  margin-top: 15px;
+  background: #E6FFE2;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  flex-direction: column;
+}
+.textTask{
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  width: 88px;
   height: 29px;
-  left: 90px;
-  top: 240px;
   font-style: normal;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 28px;
   line-height: 29px;
-  /* identical to box height */
-
-
-  /* #B1D971 */
-
   color: #07C86B;
-  /* Text Sombra */
-
   text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
 }
-.tarefa{
-  position: absolute;
-  width: 75%;
-  height: 20%;
-  left: 398px;
-  top: 50px;
-
-  /* #B1D971 */
-
-  background: #07C86B;
-  /* Sombra Style */
-
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
+.list{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  list-style: none; 
+  padding-left: 30px;
 }
-.block{
-  position: absolute;
-  width: 75%;
-  height: 70%;
-  left: 398px;
-  top: 256px;
-
-  /* #F3F3F3 */
-
-  background: #F3F3F3;
-  /* Sombra Style */
-
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
+.liBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.perfil{
-  position: absolute;
-  width: 14%;
-  height: 91%;
-  left: 99px;
-  top: 50px;
-
-  /* #F3F3F3 */
-
-  background: #F3F3F3;
-  /* Sombra Style */
-
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-}
-.box{
-  position: absolute;
+.boxTask{
+  display: flex;
+  background-color: #fff;
   width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-
-  background: #ECFFE0;
-  mix-blend-mode: normal;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  flex-direction: column;
 }
-.name{
-  position: absolute;
-  width: 95%;
-  height: 24px;
-  left: 30px;
-  top: 50px;
+.completeBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  background: #F9F9F9;
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
 }
-.description{
-  position: absolute;
-  width: 95%;
-  height: 72px;
-  left: 30px;
-  top: 95px;
+.completeButton{
+  margin-left: 15px;
+  width: 120px;
+  height: 40px;
+  background: #07C86B;
+  color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 29px;
+  cursor: pointer;
+}
+.trash{
+  margin-left: 13px;
+  margin-right: 10px;
+}
+.taskName{
+  margin-top: 3px;
+  margin-left: 10px;
+  color: #07C86B;
+  font-size: 18px;
+}
+.taskDescription{
+  margin-top: 3px;
+  margin-left: 10px;
+  color: rgb(168, 168, 168);
+}
+/* TAREFAS */
 
-  background: #F9F9F9;
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+/* NOVAS TAREFAS */
+
+.taskBox{
+  width: 100%;
+}
+.tarefa{
+  display: flex;
+  background: rgb(9, 170, 92);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
+  height: 200px;
 }
 .task{
-  position: absolute;
-  width: 139px;
-  height: 24px;
-  left: 30px;
-  top: 13px;
+  margin-left: 30px;
+  margin-bottom: 15px;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-
   color: #FFFFFF;
-
-  /* Text Sombra */
-
   text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
 }
-.submit{
-  position: absolute;
+.formTask{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.name{
+  background: #F9F9F9;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+.description{
+  background: #F9F9F9;
+  width: 95%;
+  height: 60px;
+  margin-left: 30px;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+.submitTask{
+  margin-top: 10px;
+  margin-left: 30px;
   width: 94px;
   height: 24px;
-  left: 1310px;
-  top: 13px;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   background: #FFFFFF;
-  /* Sombra Style */
-
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  cursor: pointer;
 }
+
+/* NOVAS TAREFAS */
+
+
+
+
+
+
+
+

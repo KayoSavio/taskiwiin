@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import api from '../../services/api';
 import crypto from 'crypto';
+import "./style.css";
 
 export default function Register(){
   const [name, setName] = useState('');
@@ -43,7 +44,8 @@ export default function Register(){
 
   return(
     <div className="boxRegister">
-      <form onSubmit={newUser} className="form">
+      <form onSubmit={newUser} className="formReg">
+        <h1 className="textReg">Cadastrar novo usuário</h1>
         <input 
           placeholder="Nome"
           className="inputName"
@@ -69,15 +71,15 @@ export default function Register(){
         <input 
           type="password"
           placeholder="Confirme a senha" 
-          className="password2"
+          className="password"
           value={password2}
           onChange={e => setPassword2(e.target.value)}
          />
         
-        <button className="button" type="submit">Cadastrar</button>
+        <button className="buttonForm" type="submit">Cadastrar</button>
+        <button className="buttonBack" onClick={voltar}>Voltar</button>
       </form>
       
-      <button onClick={voltar}>Voltar</button>
-    </div>
+      </div>
   )
 }

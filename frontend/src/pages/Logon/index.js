@@ -31,14 +31,12 @@ export default function Home (){
   }
 
   return(
-    <div className="login">
-      
       <div className="conteiner">
           <h1 className="text">TasKiwiin</h1>
           
-          <img src={logo} className="imgLogo" alt="logo" />
+          <img src={logo} className="Kiwii" alt="logo" />
           
-          <form onSubmit={Login} className="form">
+          <form onSubmit={Login} className="formLogon">
             
             <h2 className="textInput">Faça seu Logon</h2>
 
@@ -60,8 +58,6 @@ export default function Home (){
             Não tenho cadastro
           </Link>
       </div>
-
-    </div>
   );
 }
   
