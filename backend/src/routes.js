@@ -3,6 +3,7 @@ const routes = express.Router();
 
 const newUser = require('./controllers/newUser');
 const newTask = require('./controllers/newTask');
+const newHistory = require('./controllers/newHistory');
 
 routes.get('/task',async (req,res) => {
   //const tasks = await 
@@ -21,5 +22,7 @@ routes.get('/tasks/:id', newTask.listItem);
 routes.delete('/tasks/:id', newTask.delete);
 routes.put('/tasks/:id', newTask.update);
 
+routes.post('/history', newHistory.create);
+routes.get('/history', newHistory.find);
 
 module.exports = routes;
