@@ -1,7 +1,7 @@
 .box{
   display: flex;
-  width: 1750px;
-  height: 800px;
+  width: 1800px;
+  height: 900px;
   flex-direction: row;
 }
 
@@ -99,8 +99,8 @@
 }
 .boxTask{
   display: flex;
-  background-color: #fff;
   width: 100%;
+  background: #fff;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   flex-direction: column;
@@ -111,6 +111,7 @@
   align-items: center;
 
 }
+
 .completeButton{
   margin-left: 15px;
   width: 120px;
@@ -132,13 +133,13 @@
 .taskName{
   margin-top: 3px;
   margin-left: 10px;
-  color: #07C86B;
   font-size: 18px;
+  color: #000;
 }
 .taskDescription{
   margin-top: 3px;
   margin-left: 10px;
-  color: rgb(168, 168, 168);
+  color: #000;
 }
 /* TAREFAS */
 
@@ -190,8 +191,17 @@
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
-.submitTask{
+.select{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
   margin-top: 10px;
+}
+.type{
+  color: #fff;
+  margin-right: 5px;
+}
+.submitTask{
   margin-left: 30px;
   width: 94px;
   height: 24px;
