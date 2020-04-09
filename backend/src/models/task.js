@@ -17,10 +17,14 @@ const taskSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
+  persona:{
+    type:String,
+    required:true,
+  },
   createdAt:{
     type:Date,
     default:Date.now,
-  }
+  },
 })
 
 const Task = mongoose.model('Task',taskSchema);

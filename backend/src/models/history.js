@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const historySchema = new mongoose.Schema({
+  _id:{
+    type:String,
+    required:true,
+  },
   taskId:{
     type:String,
     required:true,
@@ -14,6 +18,10 @@ const historySchema = new mongoose.Schema({
     required:true,
   },
   description:{
+    type:String,
+    required:true,
+  },
+  persona:{
     type:String,
     required:true,
   },
