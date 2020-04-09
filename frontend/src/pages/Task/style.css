@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 550px;
+  height: 750px;
   margin-right: 25px;
   background: #E6FFE2;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
@@ -51,11 +51,27 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.button:hover{
+  opacity: 70%;
+}
 .taskSearch{
   font-size: 20px;
   color: rgb(122, 122, 122);
   margin-top: 5px;
   margin-bottom: 5px;
+}
+.personUl{
+  list-style: none;
+  height: 230px;
+  width: 250px;
+  
+  color: #07C86A;
+}
+.ulPersona{
+  margin: 0px 0px;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* PERFIL */
@@ -126,9 +142,15 @@
   line-height: 29px;
   cursor: pointer;
 }
+.completeButton:hover{
+  opacity: 70%;
+}
 .trash{
   margin-left: 13px;
   margin-right: 10px;
+}
+.trash:hover{
+  opacity: 70%;
 }
 .taskName{
   margin-top: 3px;
@@ -212,6 +234,10 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   cursor: pointer;
+}
+.submitTask:hover{
+  background-color: #07C86B;
+  color: #fff;
 }
 
 /* NOVAS TAREFAS */

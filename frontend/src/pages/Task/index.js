@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './style.css';
 import jedi from '../../assets/Perfil.jpg';
-import { MdAddCircle } from 'react-icons/md';
 import { FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 import crypto from 'crypto';
@@ -18,13 +17,14 @@ export default function NewTask(){
   const [total, setTotal] = useState(0);
   const [att, setAtt] = useState(0);
   const [tasks, setTasks] = useState([]);
+  const [areas, setAreas] = useState([]);
   const [persona, setPersona] = useState('#fff');
   
   localStorage.setItem('value', valor);
   const value = localStorage.getItem('value');
 
   function dayMeta(){
-    if(meta==value){
+    if(meta===value){
       alert('Parábens você concluiu a meta diária!')
     }else{
       return console.log('meta n concluida')
@@ -32,12 +32,20 @@ export default function NewTask(){
   };
 
   useEffect(() => {
-    api.get(`/tasks`)
+    const userName = localStorage.getItem('userName');
+    api.get(`/tasks/${userName}`)
       .then(res => {
         setTasks(res.data);
       });
   }, [tasks]);
 
+  useEffect(() => {
+    const userId = localStorage.getItem('id');
+    api.get(`/persona/${userId}`)
+      .then(res => {
+        setAreas(res.data);
+      });
+  }, [areas]);
 
   useEffect(() => {
     api.get(`/history`)
@@ -99,6 +107,10 @@ export default function NewTask(){
       localStorage.clear();
       history.push('/')
     }
+
+    function config(){
+      history.push('/persona')
+    }
     
     // JSX
   return(
@@ -106,13 +118,29 @@ export default function NewTask(){
     // PERFIL
     <div className="box">
       <div className="perfil">
-        <img src={jedi} className="jedi" />
+        <img src={jedi} className="jedi" alt="jedi"/>
         <h1 className="titlePerfil">{userName}</h1>
         <button onClick={logout} className="button">Logout</button>
         <h1 className="taskSearch">Tasks Diárias:{value}</h1>
         <h1 className="taskSearch">Meta Diária:{meta}</h1>
         <input type="number" onChange={e=>setMeta(e.target.value)} placeholder="Quantidade de metas"></input>
         <h1 className="taskSearch">Total Tasks:{total}</h1>
+        <div className="personUl">
+          <ul className="ulPersona">
+            <li>emocional:{areas.emotional}</li>
+            <li>espiritual:{areas.spiritual}</li>
+            <li>parentes:{areas.relatives}</li>
+            <li>conjugal:{areas.conjugal}</li>
+            <li>filhos:{areas.children}</li>
+            <li>social:{areas.social}</li>
+            <li>saúde:{areas.health}</li>
+            <li>servir:{areas.serve}</li>
+            <li>intelectual:{areas.intelectual}</li>
+            <li>financeiro:{areas.financial}</li>
+            <li>profissional:{areas.professional}</li>
+          </ul>
+        </div>
+        <button className="btnPerson" onClick={config}>Config</button>
       </div>
 
     {/* NEWTASK */}
@@ -177,9 +205,8 @@ export default function NewTask(){
                       }}className="completeButton">
                         Concluída
                       </button>
-                      <Link className="" onClick={() => {
-                        deleteTasks(tasks._id)
-                      }} className="trash"><FiTrash2 display="inline-block" size={32} color="#07C86B"/>
+                      <Link onClick={() => deleteTasks(tasks._id)} 
+                      className="trash"><FiTrash2 display="inline-block" size={32} color="#07C86B"/>
                       </Link>
                     </div>
                   </div>

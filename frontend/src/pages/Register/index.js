@@ -23,11 +23,24 @@ export default function Register(){
       password,
       password2
     };
-
+    const persona={
+      _id,
+      emotional:0,
+      spiritual:0,
+      relatives:0,
+      conjugal:0,
+      children:0,
+      social:0,
+      health:0,
+      serve:0,
+      intelectual:0,
+      financial:0,
+      professional:0
+    }
     try{
       if(password===password2){
       const res = await api.post('register', data);
-      console.log(res);
+      await api.post('persona', persona);
       alert(`${res.data.name} sua conta foi criada com sucesso, seu ID de acesso é ${_id}`);
       return history.push('/');}
       else{

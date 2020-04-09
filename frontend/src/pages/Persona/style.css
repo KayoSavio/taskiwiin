@@ -1,0 +1,87 @@
+
+.boxRegister{
+  display: flex;
+  background-color:#E6FFE2;
+  width: 639px;
+  height: 639px;
+  align-items: center;
+  justify-content: center;
+}
+.formReg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.inputName{
+  top: 5px;
+  width: 90%;
+  height: 35px;
+  background: #FBFBFB;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+}
+.inputEmail{
+  top: 5px;
+  width: 90%;;
+  height: 35px;
+  background: #FBFBFB;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+}
+.inputPassword{
+  top: 5px;
+  width: 90%;
+  height: 35px;
+  background: #FBFBFB;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+}
+.password{
+  top: 5px;
+  width: 90%;
+  height: 35px;
+  background: #FBFBFB;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 25px;
+}
+.buttonForm{
+  width: 283px;
+  height: 57px;
+  background: #07C86B;
+  color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+.buttonBack{
+  width: 283px;
+  height: 57px;
+  background: #07C86B;
+  color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 10px;
+}
+.textReg{
+  margin-top: 15px;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 59px;
+  color: #07C86B;
+  text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
+  margin-bottom: 55px;
+}
