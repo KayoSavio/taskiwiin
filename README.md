@@ -7,7 +7,7 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [x] Fazer a comunicação do backend com o frontend.
 
-[ ] Fazer UI design no Figma
+[x] Fazer UI design no Figma
 
 [ ] Selecionar as task pelo id do usuário.
 
@@ -15,7 +15,7 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [ ] Fazer a parte mobile.
 
-[ ] Criar um desing mais maneiro pro app.
+[x] Criar um desing mais maneiro pro app.
 
 [ ] Colocar recompensas quando o usuário fizer um determinado de tasks no dia.
 
