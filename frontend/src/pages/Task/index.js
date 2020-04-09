@@ -5,12 +5,11 @@ import jedi from '../../assets/Perfil.jpg';
 import { MdAddCircle } from 'react-icons/md';
 import { FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
-import Dialog from '../../Components/Dialogs/dialogPerfil';
-
+import crypto from 'crypto';
 
 export default function NewTask(){
        // 0-59
-  const [meta,setMeta] = useState(0);
+  const [meta,setMeta] = useState(1);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const userId = localStorage.getItem('id');
@@ -19,9 +18,9 @@ export default function NewTask(){
   const [total, setTotal] = useState(0);
   const [att, setAtt] = useState(0);
   const [tasks, setTasks] = useState([]);
-  const [persona, setPersona] = useState('');
-  const number = 0 + valor;
-  localStorage.setItem('value', number);
+  const [persona, setPersona] = useState('#fff');
+  
+  localStorage.setItem('value', valor);
   const value = localStorage.getItem('value');
 
   function dayMeta(){
@@ -52,12 +51,14 @@ export default function NewTask(){
 
     async function addTarefas(e){
       e.preventDefault();
+      const _id = crypto.randomBytes(4).toString('HEX');
       const task ={
+        _id,
         taskId:userId,
         user:userName,
         name,
         description,
-        persona
+        persona,
       };
     
       try{
@@ -65,7 +66,7 @@ export default function NewTask(){
         await api.post('tasks', task);
         setName('');
         setDescription('');
-        setPersona('');
+        setPersona('#fff');
         setAtt(att+1);
       }catch(err){
         alert('Erro em criar nova task');
@@ -106,7 +107,6 @@ export default function NewTask(){
     <div className="box">
       <div className="perfil">
         <img src={jedi} className="jedi" />
-        <Dialog/>
         <h1 className="titlePerfil">{userName}</h1>
         <button onClick={logout} className="button">Logout</button>
         <h1 className="taskSearch">Tasks Diárias:{value}</h1>
