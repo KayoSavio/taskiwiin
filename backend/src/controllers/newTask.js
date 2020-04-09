@@ -27,7 +27,11 @@ module.exports={
     return res.json(newtask);
   },
   async listItem(req,res){
-    const taskiwiin = await task.findById(req.params.id);
-    return res.json(taskiwiin);
+    const user = req.params.user;
+    await task.find({'user':user},(err,item)=>{
+      if(err){
+        return handleError(err);
+      }else{res.json(item);}
+    });
   }
 }
