@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
+  _id:{
+    type:String,
+    required:true,
+  },
   taskId:{
     type:String,
     required:true,

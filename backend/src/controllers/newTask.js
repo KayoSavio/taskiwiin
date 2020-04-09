@@ -19,7 +19,7 @@ module.exports={
     return res.send(tasks);
   },
   async delete(req,res){
-    await task.findOneAndDelete(req.params.id);
+    await task.findByIdAndDelete(req.params.id);
     return res.send('Deletado');
   },
   async update(req,res){
