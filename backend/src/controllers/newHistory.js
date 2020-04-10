@@ -12,5 +12,15 @@ module.exports={
   async find(req,res){
     const historys = await history.countDocuments();
     return res.json(historys);
+  },
+  async wait(req,res){
+    const nome = req.params.taskId;
+    await history.find({'taskId':nome},async (err,item)=>{
+      if(err){
+        return handleError(err);
+      }else{
+        res.json(item.length);
+       }
+    });
   }
 }

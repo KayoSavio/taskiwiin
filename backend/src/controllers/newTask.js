@@ -27,7 +27,7 @@ module.exports={
     return res.json(newtask);
   },
   async listItem(req,res){
-    const user = req.params.user;
+    const user = req.params.taskId;
     await task.find({'user':user},(err,item)=>{
       if(err){
         return handleError(err);

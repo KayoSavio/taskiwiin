@@ -5,9 +5,9 @@ module.exports={
     const {name, email, password} =req.body;
     try{
       if(await user.findOne({email}))
-      return res.send({error:'Usuário já existe!'});
-      console.clear();
-      console.log('Usuário criado com sucesso!');
+      return res.send({error:'Email já cadastrado!'});
+      if(await user.findOne({name}))
+      return res.send({error: 'Nome de usuário indisponível!'})
       user.create(req.body);
       res.send(req.body);
     }catch(err){
@@ -25,5 +25,13 @@ module.exports={
   async index(req,res){
     const users = await user.find();
     return res.send(users);
+  },
+  async wait(req,res){
+    const nome = req.params.name;
+    await user.find({'name':nome},(err,item)=>{
+      if(err){
+        return handleError(err);
+      }else{res.json(item);}
+    });
   }
 }

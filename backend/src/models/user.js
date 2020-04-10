@@ -3,8 +3,14 @@ const userSchema = new mongoose.Schema({
   _id:{
     type:String,
     required:true,
+    unique:true,
   },
   name:{
+    type:String,
+    required:true,
+    unique:true,
+  },
+  sexo:{
     type:String,
     required:true,
   },
@@ -15,7 +21,7 @@ const userSchema = new mongoose.Schema({
     unique:true,
   },
   password:{
-    type:Number,
+    type:String,
     required: true,
   },
   createdAt:{
