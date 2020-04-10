@@ -9,19 +9,21 @@ export default function Register(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+  const [sexo, setSexo] = useState('Masculino');
 
   const history = useHistory();
 
   async function newUser(e){
     e.preventDefault();
-    const _id = crypto.randomBytes(4).toString('HEX');
+    const _id = crypto.randomBytes(8).toString('HEX');
 
     const data = {
       _id,
       name,
       email,
       password,
-      password2
+      password2,
+      sexo
     };
     const persona={
       _id,
@@ -41,13 +43,13 @@ export default function Register(){
       if(password===password2){
       const res = await api.post('register', data);
       await api.post('persona', persona);
-      alert(`${res.data.name} sua conta foi criada com sucesso, seu ID de acesso é ${_id}`);
+      alert(`${res.data.name} sua conta foi criada com sucesso`);
       return history.push('/');}
       else{
         alert('A senha está incorreta, corrija e tente novamente');
       }
     }catch(err){
-      alert('Erro no cadastro, tente novamente');
+      alert('Email ou Nome de Usuário já existe, tente novamente');
     }
   }
 
@@ -65,7 +67,7 @@ export default function Register(){
           value={name}
           onChange={e => setName(e.target.value)}
          />
-
+        
         <input 
           placeholder="E-mail"
           className="inputEmail"
@@ -88,7 +90,11 @@ export default function Register(){
           value={password2}
           onChange={e => setPassword2(e.target.value)}
          />
-        
+        <select value={sexo} onChange={e=>setSexo(e.target.value)}>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+
         <button className="buttonForm" type="submit">Cadastrar</button>
         <button className="buttonBack" onClick={voltar}>Voltar</button>
       </form>

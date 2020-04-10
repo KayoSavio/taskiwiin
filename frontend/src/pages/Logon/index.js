@@ -5,7 +5,9 @@ import './style.css';
 import api from '../../services/api';
 
 export default function Home (){
-  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
   const history = useHistory();
   
 
@@ -13,20 +15,20 @@ export default function Home (){
     e.preventDefault();
 
     try{
-      const res = await api.get(`register/${id}`, id);
-
-      if(res.data._id===id){
-        localStorage.setItem('userName',res.data.name);
+      const res = await api.get(`registers/${name}`, name);
+      if(password===res.data[0].password&&name===res.data[0].name){
+        localStorage.setItem('userName',res.data[0].name);
+        localStorage.setItem('sexo',res.data[0].sexo);
         const userName = localStorage.getItem('userName');
         alert(`Bem vindo ${userName}`);
-        localStorage.setItem('userEmail',res.data.email);
-        localStorage.setItem('id',res.data._id);
+        localStorage.setItem('userEmail',res.data[0].email);
+        localStorage.setItem('id',res.data[0]._id);
         return history.push('/tasks');
       }else{
-      alert('ID incorreto, tente novamente!');
+      alert('Senha incorreta, tente novamente!');
       }
     }catch(err){
-      alert('Não foi possível, serviço indisponível')
+      alert('Nome de usuário não existe, tente novamente.')
     }
   }
 
@@ -42,9 +44,16 @@ export default function Home (){
 
             <input 
               className="inputID" 
-              placeholder="Coloque seu ID"
-              value={id}
-              onChange={e => setId(e.target.value)}
+              placeholder="Coloque seu Nome de Usuário"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            /> 
+            <input 
+              type="password"
+              className="inputID" 
+              placeholder="Coloque sua Senha"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             /> 
 
             <button className="buttonLogon"

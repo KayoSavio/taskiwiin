@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './style.css';
-import jedi from '../../assets/Perfil.jpg';
+import homem from '../../assets/Perfil.jpg';
+import mulher from '../../assets/perfilF.jpg';
 import { FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 import crypto from 'crypto';
@@ -22,7 +23,14 @@ export default function NewTask(){
   
   localStorage.setItem('value', valor);
   const value = localStorage.getItem('value');
+  const sexo = localStorage.getItem('sexo');
 
+  function genero (){
+    if(sexo==='Masculino')
+    return homem;
+    if(sexo==='Feminino')
+    return mulher;
+  }
   function dayMeta(){
     if(meta===value){
       alert('Parábens você concluiu a meta diária!')
@@ -48,7 +56,8 @@ export default function NewTask(){
   }, [areas]);
 
   useEffect(() => {
-    api.get(`/history`)
+    const userId = localStorage.getItem('id');
+    api.get(`/history/${userId}`)
       .then(res => {
         setTotal(res.data);
       });
@@ -59,7 +68,7 @@ export default function NewTask(){
 
     async function addTarefas(e){
       e.preventDefault();
-      const _id = crypto.randomBytes(4).toString('HEX');
+      const _id = crypto.randomBytes(8).toString('HEX');
       const task ={
         _id,
         taskId:userId,
@@ -118,7 +127,7 @@ export default function NewTask(){
     // PERFIL
     <div className="box">
       <div className="perfil">
-        <img src={jedi} className="jedi" alt="jedi"/>
+        <img src={genero()} className="jedi" alt="jedi"/>
         <h1 className="titlePerfil">{userName}</h1>
         <button onClick={logout} className="button">Logout</button>
         <h1 className="taskSearch">Tasks Diárias:{value}</h1>
@@ -168,17 +177,17 @@ export default function NewTask(){
               <label className="type">Tipo de tarefa:</label>
               <select value={persona} onChange={e=>setPersona(e.target.value)}>
                 <option value="#fff" className="cor">none</option>
-                <option value="rgb(249, 255, 200)" className="cor">emocional</option>
-                <option value="rgb(255, 226, 163)" className="cor">espiritual</option>
-                <option value="rgb(255, 184, 118)" className="cor">parentes</option>
-                <option value="rgb(255, 141, 121)" className="cor">conjugal</option>
-                <option value="rgb(255, 121, 121)" className="cor">filhos</option>
-                <option value="rgb(255, 143, 231)" className="cor">social</option>
-                <option value="rgb(229, 143, 255)" className="cor">saúde</option>
-                <option value="rgb(195, 143, 255)" className="cor">servir</option>
-                <option value="rgb(143, 151, 255)" className="cor">intelectual</option>
-                <option value="rgb(151, 223, 252)" className="cor">financeiro</option>
-                <option value="rgb(151, 252, 173)" className="cor">profissional</option>
+                <option value="rgb(249, 255, 190)" className="cor">emocional</option>
+                <option value="rgb(255, 226, 80)" className="cor">espiritual</option>
+                <option value="rgb(255, 150, 118)" className="cor">parentes</option>
+                <option value="rgb(255, 100, 80)" className="cor">conjugal</option>
+                <option value="rgb(255, 10, 100)" className="cor">filhos</option>
+                <option value="rgb(255, 73, 151)" className="cor">social</option>
+                <option value="rgb(229, 83, 255)" className="cor">saúde</option>
+                <option value="rgb(195, 93, 255)" className="cor">servir</option>
+                <option value="rgb(14, 151, 255)" className="cor">intelectual</option>
+                <option value="rgb(11, 223, 252)" className="cor">financeiro</option>
+                <option value="rgb(11, 252, 173)" className="cor">profissional</option>
               </select>
               <div className="buttonsForm">
             </div>
@@ -205,7 +214,7 @@ export default function NewTask(){
                       }}className="completeButton">
                         Concluída
                       </button>
-                      <Link onClick={() => deleteTasks(tasks._id)} 
+                      <Link to="/tasks" onClick={() => deleteTasks(tasks._id)} 
                       className="trash"><FiTrash2 display="inline-block" size={32} color="#07C86B"/>
                       </Link>
                     </div>

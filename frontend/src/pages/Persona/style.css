@@ -1,14 +1,34 @@
 
-.boxRegister{
+.boxPersona{
   display: flex;
   background-color:#E6FFE2;
-  width: 639px;
-  height: 639px;
+  width: 1300px;
+  height: 800px;
   align-items: center;
   justify-content: center;
 }
-.formReg{
+.areasPer{
   display: flex;
+  width: 800px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.areasA{
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.areasB{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.formPerson{
+  display: flex;
+  width: max-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
