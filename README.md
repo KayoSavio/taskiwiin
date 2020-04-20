@@ -9,9 +9,9 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [x] Fazer UI design no Figma
 
-[ ] Selecionar as task pelo id do usuário.
+[x] Selecionar as task pelo id do usuário.
 
-[ ] Mudar campos de logon de id para usuário e senha
+[x] Mudar campos de logon de id para usuário e senha
 
 [ ] Fazer a parte mobile.
 
@@ -19,7 +19,7 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [ ] Colocar recompensas quando o usuário fizer um determinado de tasks no dia.
 
-[ ] Colocar dificuldades nas tasks e informar o valor de cada.
+[x] Colocar dificuldades nas tasks e informar o valor de cada.
 
 [ ] Colocar tempo estimado para finalizar a task.
 
@@ -35,6 +35,6 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [ ] Ativar um alarme mais ou menos ás 22h pra vc planejar as suas tasks no próximo dia.
 
-[ ] Rank de tarefas feitas por outros usuários.
+[x] Rank de tarefas feitas por outros usuários.
 
 [ ] Incorporar Animações no site e no app mobile.
