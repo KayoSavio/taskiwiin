@@ -1,9 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
+import {
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+} from 'recharts';
 import api from '../../services/api';
 import "./style.css";
 
 export default function Register(){
+  
   const [areas,setAreas]=useState([]);
   const [emotional, setEmotional] = useState(areas.emotional);
   const [spiritual, setSpiritual] = useState(areas.spiritual);
@@ -16,7 +20,43 @@ export default function Register(){
   const [intelectual, setIntelectual] = useState(areas.intelectual);
   const [financial, setFinancial] = useState(areas.financial);
   const [professional, setProfessional] = useState(areas.professional);
+ 
   
+  const data = [
+    {
+      subject: 'emotional', A: areas.emotional*10, fullMark: 10,
+    },
+    {
+      subject: 'spiritual', A: areas.spiritual*10,fullMark: 10,
+    },
+    {
+      subject: 'relatives', A: areas.relatives*10,fullMark: 10,
+    },
+    {
+      subject: 'conjugal', A: areas.conjugal*10,fullMark: 10,
+    },
+    {
+      subject: 'children', A: areas.children*10, fullMark: 10,
+    },
+    {
+      subject: 'social', A: areas.social*10,fullMark: 10,
+    },
+    {
+      subject: 'health', A: areas.health*10, fullMark: 10,
+    },
+    {
+      subject: 'serve', A: areas.serve*10, fullMark: 10,
+    },
+    {
+      subject: 'intelectual', A: areas.intelectual*10, fullMark: 10,
+    },
+    {
+      subject: 'financial', A: areas.financial*10,fullMark: 10,
+    },
+    {
+      subject: 'professional', A: areas.professional*10, fullMark: 10,
+    },
+  ];
   const _id = localStorage.getItem('id')
   const history = useHistory();
 
@@ -27,6 +67,7 @@ export default function Register(){
         setAreas(res.data);
       });
   }, [areas]);
+
   async function newUser(e){
     e.preventDefault();
 
@@ -46,8 +87,6 @@ export default function Register(){
     }
     try{
       await api.put(`persona/${_id}`, persona);
-      alert('Atualizado');
-      return history.push('/tasks');
     }catch(err){
       alert('Erro no cadastro, tente novamente');
     }
@@ -59,6 +98,12 @@ export default function Register(){
 
   return(
     <div className="boxPersona">
+      <RadarChart cx={300} cy={250} outerRadius={200} width={500} height={500} data={data}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis/>
+          <Radar name="Mike" dataKey="A" stroke="#07C86B" fill="#07A86B" fillOpacity={0.6}/>
+        </RadarChart>
       <form onSubmit={newUser} className="formPerson">
         <h1 className="textReg">Areas da sua vida:</h1>
         <div className="areasPer">

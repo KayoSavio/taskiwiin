@@ -17,6 +17,7 @@ export default function Home (){
     try{
       const res = await api.get(`registers/${name}`, name);
       if(password===res.data[0].password&&name===res.data[0].name){
+        localStorage.setItem('coins',res.data[0].taskCoin);
         localStorage.setItem('userName',res.data[0].name);
         localStorage.setItem('sexo',res.data[0].sexo);
         const userName = localStorage.getItem('userName');

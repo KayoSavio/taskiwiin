@@ -1,30 +1,28 @@
+
 .box{
   display: flex;
-  width: 1800px;
-  height: 900px;
+  width: 100%;
+  height: 100%;
   flex-direction: row;
 }
 
 /* PERFIL */
-
+p{
+  display:flex;
+  font-size: 18px;
+}
 .perfil{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 750px;
+  height: 650px;
   margin-right: 25px;
   background: #E6FFE2;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
-.jedi{
-  margin-top: 30px;
-  width: 213px;
-  height: 213px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
+
 .titlePerfil{
   display: flex;
   justify-content: center;
@@ -67,6 +65,7 @@
   
   color: #07C86A;
 }
+.recharts-surface
 .ulPersona{
   margin: 0px 0px;
   list-style: none;
@@ -75,30 +74,33 @@
 }
 
 /* PERFIL */
-
+.titleContent{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* TAREFAS */
-
-.block{
-  display: flex;
-  margin-top: 15px;
-  background: #E6FFE2;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-  flex-direction: column;
+.contentName{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.textTask{
-  margin-left: 30px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  width: 88px;
-  height: 29px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 29px;
-  color: #07C86B;
-  text-shadow: 2px 0px 0.1px rgba(0, 0, 0, 0.25);
+
+.strongCoins{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.dialogBox{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  margin-top: 10px;
 }
 .list{
   margin-top: 10px;
@@ -168,9 +170,6 @@
 
 /* NOVAS TAREFAS */
 
-.taskBox{
-  width: 100%;
-}
 .tarefa{
   display: flex;
   background: rgb(9, 170, 92);
@@ -191,33 +190,37 @@
 .formTask{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  align-items: flex-start;
+  width: 500px;
+  align-items: flex-end;
   justify-content: center;
 }
-
+.btnForm{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
 .name{
   background: #F9F9F9;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
-  width: 95%;
-  margin-left: 30px;
+  width: 100%;
   margin-bottom: 5px;
   border-radius: 6px;
 }
 .description{
   background: #F9F9F9;
-  width: 95%;
-  height: 60px;
-  margin-left: 30px;
+  width: 100%;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
 .select{
   display: flex;
   flex-direction: row;
-  margin-left: 30px;
-  margin-top: 10px;
+  align-self: flex-start;
+  margin-top: 15px;
 }
 .type{
   color: #fff;

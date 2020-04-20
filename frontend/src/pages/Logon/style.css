@@ -1,10 +1,11 @@
 .conteiner{
   display:flex;
+  margin: 1%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 639px;
-  height: 639px;
+  width: 98%;
+  height: 96%;
   background: #E6FFE2;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }

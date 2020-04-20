@@ -1,0 +1,16 @@
+.Drawer{
+  display:flex;
+  margin: 100px 100px 100px;
+}
+
+.feedUl{
+  list-style: none;
+}
+
+.nameUser{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.divHistory{
+  margin-bottom: 20px;
+}

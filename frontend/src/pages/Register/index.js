@@ -23,7 +23,8 @@ export default function Register(){
       email,
       password,
       password2,
-      sexo
+      sexo,
+      taskCoin:0,
     };
     const persona={
       _id,
@@ -43,7 +44,7 @@ export default function Register(){
       if(password===password2){
       const res = await api.post('register', data);
       await api.post('persona', persona);
-      alert(`${res.data.name} sua conta foi criada com sucesso`);
+      alert(`${res.data[0].name} sua conta foi criada com sucesso`);
       return history.push('/');}
       else{
         alert('A senha está incorreta, corrija e tente novamente');
