@@ -18,9 +18,11 @@ routes.get('/register/:id', newUser.login);
 routes.get('/register', newUser.index);
 routes.get('/registers/:name', newUser.wait);
 routes.get('/registers/:password', newUser.wait);
+routes.put('/register/:id', newUser.update);
 
 routes.post('/tasks', newTask.create);
 routes.get('/tasks', newTask.list);
+routes.get('/task/:id', newTask.search);
 routes.get('/tasks/:taskId', newTask.listItem);
 routes.delete('/tasks/:id', newTask.delete);
 routes.put('/tasks/:id', newTask.update);

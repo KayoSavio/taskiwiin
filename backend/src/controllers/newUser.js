@@ -26,6 +26,10 @@ module.exports={
     const users = await user.find();
     return res.send(users);
   },
+  async update(req,res){
+    const newtask = await user.findByIdAndUpdate(req.params.id, req.body, {new:true});
+    return res.json(newtask);
+  },
   async wait(req,res){
     const nome = req.params.name;
     await user.find({'name':nome},(err,item)=>{

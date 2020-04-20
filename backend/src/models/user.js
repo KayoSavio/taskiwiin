@@ -27,7 +27,11 @@ const userSchema = new mongoose.Schema({
   createdAt:{
     type:Date,
     default:Date.now,
-  }  
+  },
+  taskCoin:{
+    type:Number,
+    required:true,
+  }
 });
 
 const User = mongoose.model('User', userSchema);

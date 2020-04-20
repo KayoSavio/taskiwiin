@@ -6,8 +6,6 @@ module.exports={
     try{
       if(await task.findOne({name}))
       return res.send({error:'Tarefa Existente'});
-      console.clear();
-      console.log('Tarefa Adicionada');
       res.send(req.body);
       task.create(req.body);
     }catch(err){
@@ -33,5 +31,9 @@ module.exports={
         return handleError(err);
       }else{res.json(item);}
     });
-  }
+  },
+  async search(req,res){
+    const taski = await task.findById(req.params.id);
+    return res.json(taski);
+  },
 }

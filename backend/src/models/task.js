@@ -25,6 +25,14 @@ const taskSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
+  recompensa:{
+    type:String,
+    required:true,
+  },
+  dificuldade:{
+    type:String,
+    required:true,
+  },
   createdAt:{
     type:Date,
     default:Date.now,

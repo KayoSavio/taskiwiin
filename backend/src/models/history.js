@@ -25,10 +25,14 @@ const historySchema = new mongoose.Schema({
     type:String,
     required:true,
   },
+  dificuldade:{
+    type:String,
+    required:true,
+  },
   createdAt:{
     type:Date,
     default:Date.now,
-  }
+  },
 })
 
 const history = mongoose.model('History',historySchema);
