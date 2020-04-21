@@ -1,4 +1,4 @@
-Aplicativo Taskiwiin
+Aplicativo Taskiwin
 
 Bem Vindo meu nome é Kayo Sávio, desenvolvo esse aplicativo para melhorar a minha produtividade.
 Espero que ajude vocês tambem!
@@ -27,7 +27,7 @@ Falta fazer e coisas que quero adicionar ainda:
 
 [ ] Criar um sistema de nível que dependendo do lvl vc muda a imagem de perfil.
 
-[ ] O usuário poder se dar uma recompensa após fazer alguma task.
+[x] O usuário poder se dar uma recompensa após fazer alguma task.
 
 [ ] Tempo limite para fazer determinada tarefa no dia, informando quanto tempo falta.
 
