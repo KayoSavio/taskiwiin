@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {Box, Button, Dialog, Container, IconButton} from '@material-ui/core';
+import {Box, Button, Dialog, Container} from '@material-ui/core';
 import green from '@material-ui/core/colors/green';
 import { makeStyles } from '@material-ui/core/styles';
 import coin from '../../../assets/coin.svg';
@@ -13,16 +14,15 @@ const useStyles = makeStyles((theme) => ({
   btn:{
     width: '48px',
     height: '48px',
-    marginRight: '3px', 
-    marginLeft: '5px',
+    marginRight: '10px', 
+    marginLeft: '0px',
     display:'flex',
-    justifyContent:'flex-end'
+    justifyContent:'center',
   },
   box:{
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: '0px',
   },
   container:{
     display: 'flex',
@@ -30,9 +30,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '0px',
   },
   img:{
-    width: '48px',
-    height: '48px',
-    marginRight: '0px',
+    width: '100%',
+    height: '100%',
   },
   kiwiCoin:{
     width: '512px',
@@ -59,9 +58,9 @@ export default function ClainDialog() {
   return (
     <Container className={classes.container}>
     <Box className={classes.box}>
-      <IconButton  onClick={handleClickOpen} className={classes.btn}>
+      <Link  onClick={handleClickOpen} className={classes.btn}>
         <img src={coin} alt="coin" className={classes.img}/>
-      </IconButton>
+      </Link>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -70,7 +69,7 @@ export default function ClainDialog() {
       >
         <DialogTitle id="alert-dialog-title" style={{color:'green'}}>{"Task Coin"}</DialogTitle>
         <DialogContent className="dialogClain">
-          <img src={kiwiCoin} alt="coin" className={classes.kiwiCoin}/>
+          <img src={kiwiCoin} alt="kiwiCoin" className={classes.kiwiCoin}/>
         <DialogContentText>
           Task Coin é a forma de pagamento no app da Taskiwin, complete tarefas e ganhe coins!
           Quanto mais coins maior é o desconto na nossa loja!

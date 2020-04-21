@@ -91,6 +91,7 @@ export default function AlertDialog() {
       setDescription('');
       setRecompensa('');
       setPersona('#fff');
+      setDificult('None');
       setAtt(att+1);
       handleClose();
     }catch(err){

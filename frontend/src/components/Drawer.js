@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {ListItemText, ListItemIcon, ListItem, Typography, List, Toolbar, AppBar, Drawer} from '@material-ui/core';
@@ -7,6 +7,8 @@ import {IoMdTrophy} from 'react-icons/io';
 import ProfileDialog from './ProfileDialog';
 import NotificationDialog from './NotificationDialog';
 import Store from './Store';
+import coin from '../assets/coin.svg';
+import api from '../services/api';
 
 const drawerWidth = 240;
 
@@ -45,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
   icon:{
     display:'flex',
     flexDirection:'row',
+    justifyContent:'center',
+    alignContent:'center',
   },
   coinValue:{
     marginTop: '25px',
@@ -60,7 +64,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ClippedDrawer() {
   const classes = useStyles();
+  const [coinValue,setCoinValue] = useState('');
   const history = useHistory();
+
+
+  useEffect(() => {
+    const userId = localStorage.getItem('id');
+    api.get(`register/${userId}`)
+    .then(res=>{
+      console.log(res);
+      setCoinValue(res.data.taskCoin);
+    });
+  }, [coinValue])
+
 
   function logout(){
     localStorage.clear('');
@@ -73,7 +89,7 @@ export default function ClippedDrawer() {
     history.push('/tasks');
   }
   function goProfile(){
-    history.push('/profile');
+    history.push('/ranking');
   }
   return (
     <div className={classes.root}>
@@ -84,6 +100,8 @@ export default function ClippedDrawer() {
             Taskiwin
           </Typography>
           <div className={classes.icon}>
+          <img src={coin} alt="coin" style={{width:'25px', height: '25px', marginTop:'18px', marginRight:'3px'}}/>
+          <p style={{marginRight:'10px'}}>:{coinValue}</p>
           <Store/>
           <NotificationDialog/>
           <ProfileDialog/>

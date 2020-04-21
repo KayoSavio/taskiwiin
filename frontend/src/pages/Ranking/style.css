@@ -1,0 +1,9 @@
+.Content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #E6FFE2;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  flex-direction: column;
+}

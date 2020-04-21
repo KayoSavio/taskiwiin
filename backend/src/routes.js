@@ -5,6 +5,7 @@ const newUser = require('./controllers/newUser');
 const newTask = require('./controllers/newTask');
 const newHistory = require('./controllers/newHistory');
 const newPersona = require('./controllers/newPersona');
+const newClaim = require('./controllers/newClaim');
 
 routes.get('/task',async (req,res) => {
   //const tasks = await 
@@ -26,6 +27,12 @@ routes.get('/task/:id', newTask.search);
 routes.get('/tasks/:taskId', newTask.listItem);
 routes.delete('/tasks/:id', newTask.delete);
 routes.put('/tasks/:id', newTask.update);
+
+routes.post('/claim', newClaim.create);
+routes.get('/claim/:id', newClaim.search);//procura por um unico item com um id especificado
+routes.get('/clain/:claimId', newClaim.listItem);//procura por todos os itens que tem o valor especidicado
+routes.delete('/claim/:id', newClaim.delete);
+routes.put('/claim/:id', newClaim.update);
 
 routes.post('/history', newHistory.create);
 routes.get('/history', newHistory.find);

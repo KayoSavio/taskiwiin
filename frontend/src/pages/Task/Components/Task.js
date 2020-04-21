@@ -4,7 +4,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import api from '../../../services/api';
 import {IconButton} from '@material-ui/core';
 import AddTask from './AddTask';
-import Clain from './Clain';
+import Claim from './Claim';
 import Coin from './Coin';
 
 export default function NewTask(){
@@ -14,7 +14,7 @@ const [valor, setValor] = useState(0);
 // const [total, setTotal] = useState(0);
 const [tasks, setTasks] = useState([]);
 const [areas, setAreas] = useState([]);
-const [coins, setCoins] = useState(localStorage.getItem('coins'));
+// const [coins, setCoins] = useState(localStorage.getItem('coins'));
 
 localStorage.setItem('value', valor);
 const value = localStorage.getItem('value');
@@ -85,6 +85,7 @@ async function taskValue(id){
     if(res.data.dificuldade==="Expert")
       return 5;
 }
+
 // COMPLETE
 async function completeTasks(id){
   const userId = localStorage.getItem('id');
@@ -99,7 +100,7 @@ async function completeTasks(id){
    setValor(valor + 1);
    const res = await api.put(`register/${userId}`,data);
    localStorage.setItem('coins',res.data.taskCoin);
-   setCoins(res.data.taskCoin);
+  //  setCoins(res.data.taskCoin);
    dayMeta();
 }
  catch(err){alert('Erro em deletar task, tente novamente')}
@@ -115,9 +116,8 @@ return(
       <AddTask/>
       <p>TaskCoins:</p>
       <Coin/>
-      <strong className="strongCoins">{coins}</strong>
-      <p>Clain:</p>
-      <Clain/>
+      <p>Claim:</p>
+      <Claim/>
       </div>
       </div>
        <ul className="list">
@@ -134,7 +134,7 @@ return(
                  <p  className="taskClain" style={{marginLeft:'10px', marginBottom:'5px'}}>Recompensa:{tasks.recompensa}</p>
                </div>
                <div className="completeBox">
-                 <button size="medium" variant="contained" onClick={() => {
+                 <button  onClick={() => {
                    completeTasks(tasks._id)
                  }}className="completeButton">
                    Concluída

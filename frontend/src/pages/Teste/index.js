@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
+import {MobileStepper} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -8,9 +8,18 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 const useStyles = makeStyles({
   root: {
     width: 1000,
+    height:80,
     maxWidth: 400,
     flexGrow: 1,
+    
   },
+  div:{
+    height:'1000px',
+    display:'flex',
+    justifyContent:'center',
+    alignContent:'center',
+    alignItems:'flex-end',
+  }
 });
 
 export default function Teste() {
@@ -27,6 +36,7 @@ export default function Teste() {
   };
 
   return (
+    <div className={classes.div}>
     <MobileStepper
       variant="progress"
       steps={10}
@@ -34,7 +44,7 @@ export default function Teste() {
       activeStep={activeStep}
       className={classes.root}
       nextButton={
-        <Button size="small" onClick={handleNext} disabled={activeStep === 10}>
+        <Button size="small" onClick={handleNext} disabled={activeStep === 9}>
           Next
           {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
         </Button>
@@ -46,6 +56,7 @@ export default function Teste() {
         </Button>
       }
     />
+    </div>
   );
 }
 
