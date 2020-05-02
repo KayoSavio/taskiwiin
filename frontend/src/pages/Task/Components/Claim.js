@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   btn:{
     width: '48px',
     height: '48px',
-    marginRight: '190px',
+    marginRight: '30px',
   },
   box:{
     display: 'flex',

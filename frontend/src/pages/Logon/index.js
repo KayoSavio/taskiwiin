@@ -35,7 +35,7 @@ export default function Home (){
 
   return(
       <div className="conteiner">
-          <h1 className="text">TasKiwiin</h1>
+          <h1 className="text">TasKiwin</h1>
           
           <img src={logo} className="Kiwii" alt="logo" />
           

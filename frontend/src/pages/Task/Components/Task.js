@@ -6,6 +6,12 @@ import {IconButton} from '@material-ui/core';
 import AddTask from './AddTask';
 import Claim from './Claim';
 import Coin from './Coin';
+import None from '../../../assets/buttonDificult/none.svg';
+import Easy from '../../../assets/buttonDificult/Easy.svg';
+import VeryEasy from '../../../assets/buttonDificult/VeryEasy.svg';
+import Medium from '../../../assets/buttonDificult/Medium.svg';
+import Hard from '../../../assets/buttonDificult/Hard.svg';
+import Expert from '../../../assets/buttonDificult/Expert.svg';
 
 export default function NewTask(){
 const meta = 5;
@@ -106,6 +112,20 @@ async function completeTasks(id){
  catch(err){alert('Erro em deletar task, tente novamente')}
  
 }
+function btnDificult(img){
+  if(img==='None')
+  return None;
+  if(img==='Very Easy')
+  return VeryEasy;
+  if(img==='Easy')
+  return Easy;
+  if(img==='Medium')
+  return Medium;
+  if(img==='Hard')
+  return Hard;
+  if(img==='Expert')
+  return Expert;
+}
 
 return(
      <div className="Content">
@@ -125,11 +145,10 @@ return(
            <li key={tasks._id}>
              <div className="liBox">
                <div className="boxTask" style={{backgroundColor: tasks.persona,}}>
-                 <div className="contentName" style={{display:'flex',flexDirection: 'row', justifyContent: 'space-between'}}>
+                 <div className="contentName" style={{display:'flex',flexDirection: 'row', justifyContent:'flex-start', alignItems:'center', marginLeft:'3px'}}>
+                 <img src={btnDificult(tasks.dificuldade)} className="taskHard" alt="btnDificult" style={{marginLeft:'10px',marginRight: '0px', marginTop:'5px',marginBottom:'0px', width:'30px',height:'30px'}}/>
                  <strong  className="taskName">Nome:{tasks.name}</strong>
-                 <p className="taskHard" style={{marginRight: '15px', marginTop:'5px',marginBottom:'0px'}}>Mode:{tasks.dificuldade}</p>
                  </div>
-                 
                  <p className="taskDescription">Descrição:{tasks.description}</p>
                  <p  className="taskClain" style={{marginLeft:'10px', marginBottom:'5px'}}>Recompensa:{tasks.recompensa}</p>
                </div>

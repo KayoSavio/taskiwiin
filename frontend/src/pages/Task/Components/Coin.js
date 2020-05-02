@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     width: '48px',
     height: '48px',
     marginRight: '10px', 
-    marginLeft: '0px',
+    marginLeft: '5px',
     display:'flex',
     justifyContent:'center',
   },
